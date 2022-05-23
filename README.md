@@ -1,12 +1,22 @@
 # Leveraging Relational Information for Learning Weakly Disentangled Representations
 
-This repository provides the Python implementation of the paper "Leveraging Relational Information for Learning Weakly Disentangled Representations", introducing Weak Disentanglement, a new way for learning disentangled representations that relaxes some of the limitations of the previous methods. The project is written in Pytorch. The paper has been accepted at WCCI 2022. 
+This repository provides the Python implementation of the paper "Leveraging Relational Information for Learning Weakly Disentangled Representations", introducing Weak Disentanglement, a new way for learning disentangled representations that relaxes some of the limitations of the previous methods. The project is written in Pytorch. The paper has been accepted at WCCI 2022.
 
-You can read the MusAE by reading [this paper on ArXiv](https://arxiv.org/abs/2001.05494).
+Weakly disentangled representations are able to structure themselves in order to separate the different regions encoding specific combinations of factor of variations. Knowing the location of these regions in the latent space, it is then possible to manipulate the representation in order to obtain controlled changes in the corresponding decoded data samples.
+
+If you want to know more about weak disentanglement, you can read the [paper on ArXiv](https://arxiv.org/pdf/2205.10056.pdf).
+
 ## Getting Started
+The project is separated into three subfolders, corresponding to the different datasets on which the model is trained. Each subfolder contain similar files, and should allow for a complete training of the model on the specific dataset, without the need of files from other folders.
 
-- File *main.py* is the main script. It basically just calls the appropriate functions of other scripts, according to the chosen configuration settings.
-- File *config.py* contains the model's configuration settings.
+All the folder are structured as follows:
+- File *train.py* is the main training script, implementing the training/eval loop of the model.
+- File *config.py* contains the model's configuration settings, structured as a Python dictionary.
+- File *prior.py* contains all the prior of the adversarial autoencoder taht have been considered during the developement of the model. Some of the prior are not actually used in the final model.
+- File *model.py* contains the implementation of the layers of the AbsAE and ReL models.
+- File *loss.py* contains the implementations of all the losses used  during training.
+- File *log.py* contains a collections of logging functions used to produce the final results and to check the progress of training.
+- File *dataset.py* contains the implementation of the dataset object and all data-related utilities. 
 - Files *train.py*, *train_gm.py*, *encoders.py*,  *decoders.py*, *discriminator.py*,  contains the actual models' implementations and training processes.
 - File *dataset.py* contains helper functions used for preprocessing, postprocessing and accessing the dataset.
 

@@ -4,7 +4,7 @@ This repository provides the Python implementation of the paper "Leveraging Rela
 
 Weakly disentangled representations are able to structure themselves in order to separate the different regions encoding specific combinations of factor of variations. Knowing the location of these regions in the latent space, it is then possible to manipulate the representation in order to obtain controlled changes in the corresponding decoded data samples.
 
-If you want to know more about weak disentanglement, you can read the [paper on ArXiv](https://arxiv.org/pdf/2205.10056.pdf).
+If you want to know more about weak disentanglement, you can read the [paper on ArXiv](https://arxiv.org/pdf/2205.10056.pdf), which also contains a link to some examples of learned realations by the trained models.
 
 ## Getting Started
 The project is separated into three subfolders, corresponding to the different datasets on which the model is trained. Each subfolder contain similar files, and should allow for a complete training of the model on the specific dataset, without the need of files from other folders.

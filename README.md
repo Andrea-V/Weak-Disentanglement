@@ -16,23 +16,18 @@ All the folder are structured as follows:
 - File *model.py* contains the implementation of the layers of the AbsAE and ReL models.
 - File *loss.py* contains the implementations of all the losses used  during training.
 - File *log.py* contains a collections of logging functions used to produce the final results and to check the progress of training.
-- File *dataset.py* contains the implementation of the dataset object and all data-related utilities. 
-- Files *train.py*, *train_gm.py*, *encoders.py*,  *decoders.py*, *discriminator.py*,  contains the actual models' implementations and training processes.
-- File *dataset.py* contains helper functions used for preprocessing, postprocessing and accessing the dataset.
+- File *dataset.py* contains the implementation of the dataset object and all data-related utilities.
 
 ## Installation/Dependencies
 
-The main dependencies are:
-- Keras 2.2.2
-- TensorFlow 1.12
-
-plus a number of other various python libraries. You should be able to install everything using the *musae.yml* file provided in the repository.
+The model is implemented in Pytorch. 
+You should be able to install all the required dependencies using the *ap2.yml* file that will be (soon) added to the repository.
 
 ## Usage
 
-First, you need to create the dataset. You need to download a set of MIDI files and then create the corresponding pianorolls. The scripts in *dataset.py* are already tuned to preprocess the [MIDI Lakh Dataset](https://colinraffel.com/projects/lmd/), so I suggest you to use that. But you can use any set of MIDI files you want. In order to start the preprocessing phase, you should set the configuration variable *preprocessing* to *True* in *config.py*. Then run *main.py*. The preprocessing phase may take some time, even days, depending on your dataset's size.
+First, you need to download the corresponding dataset. Place the raw data into the "./data" subfolder, in the same folder as the one of the scripts.
 
-After the dataset has been created, you can actually train the model. Just set *preprocessing=False* and re-run *main.py*. Training can, again, take a long time, depending on the actual dataset size and on the model architecture. Be sure to instatiate the appropriate version of MusAE (single gaussian or gaussian mixture) with the specific training file.
+After that, you are ready to go! You can start a new training by running the *train.py* script.
 
 In *config.py* you can freely change many model parameters, from the number of latent variable to the number of hidden layers of the many architectural components. The parameters name should be quite auto-explicatives.
 
